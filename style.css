@@ -1,0 +1,235 @@
+/* Importing Google Font 'Poppins' */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+/* common variables */
+:root {
+  /* colors */
+  --primary: #0079ff;
+  --primary-light: rgba(0, 121, 255, 0.08);
+  --primary-dark: #0062d3;
+  --light: #ffffff;
+  --dark: #222222;
+  --grey: #efefef;
+  --dark-light: rgba(0, 0, 0, 0.2);
+  /* box-shadow */
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--grey);
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  z-index: 2;
+}
+
+.navbar .content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: inherit;
+}
+
+.content .logo {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.content .menu-icon {
+  display: none;
+  height: inherit;
+}
+
+.content .menu-icon i {
+  line-height: 80px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: color 0.2s ease;
+}
+
+.content .menu-icon i:hover {
+  color: var(--primary);
+}
+
+.content .desktop {
+  display: flex;
+  align-items: center;
+}
+
+.desktop .links {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.links li {
+  margin: 0 1rem;
+}
+
+.links li a {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--dark);
+  transition: color 0.2s ease;
+}
+
+.links li a.active {
+  color: var(--primary);
+}
+
+.links li a:hover {
+  color: var(--primary);
+}
+
+.desktop .buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons .btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border 0.2s ease, background-color 0.2s ease;
+}
+
+.btn.login {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  margin-right: 1rem;
+  color: var(--primary);
+}
+
+.btn.login:hover {
+  border: 1px solid var(--primary);
+  background-color: var(--primary-light);
+}
+
+.btn.signup {
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.btn.signup:hover {
+  border: 1px solid var(--primary-dark);
+  background-color: var(--primary-dark);
+}
+
+.mobile-nav {
+  position: absolute;
+  left: -400px;
+  top: 80px;
+  width: 320px;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  height: calc(100vh - 80px);
+  background-color: var(--light);
+  z-index: 1;
+  transition: left 0.7s ease;
+}
+
+.backdrop {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: var(--dark-light);
+  z-index: 0;
+}
+
+.mobile-nav li {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.mobile-nav li i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav li a {
+  margin-top: 3px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--dark);
+  transition: color 0.2s ease;
+}
+
+.mobile-nav li.active,
+.mobile-nav li.active a {
+  color: var(--primary);
+}
+
+.mobile-nav li:hover a,
+.mobile-nav li:hover i {
+  color: var(--primary);
+}
+
+@media screen and (max-width: 1199px) {
+  .content .desktop {
+    display: none;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .content .menu-icon {
+    display: block;
+  }
+
+  .mobile-nav.show {
+    left: 0;
+  }
+
+  .mobile-nav.show + .backdrop {
+    display: block;
+  }
+}

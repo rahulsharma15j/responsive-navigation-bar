@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar | upCoding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Navigation Content -->
+      <div class="content">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="logo.png" alt="logo" />
+          <h1>upCoding</h1>
+        </div>
+
+        <!-- Links -->
+        <div class="desktop">
+          <ul class="links">
+            <li>
+              <a href="#" class="active">Home</a>
+            </li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Playlists</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <div class="buttons">
+            <button class="btn login">Login</button>
+            <button class="btn signup">Signup</button>
+          </div>
+        </div>
+        <!-- Menu Icon -->
+        <div class="menu-icon" onclick="toggle()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <ul class="mobile-nav">
+      <li class="active">
+        <i class="fa-solid fa-house"></i>
+
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-video"></i>
+
+        <a href="#">Videos</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-film"></i>
+        <a href="#">Playlists</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-users"></i>
+
+        <a href="#">Community</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-address-card"></i>
+
+        <a href="#">About</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-right-to-bracket"></i>
+
+        <a href="#">Login</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-user-plus"></i>
+
+        <a href="#">Signup</a>
+      </li>
+    </ul>
+
+    <!-- Backdrop -->
+    <div class="backdrop" onclick="toggle()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
